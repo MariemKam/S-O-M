@@ -1,0 +1,8 @@
+STM32L0xx_HAL_Driver
+Components
+STM32L0xx_Nucleo
+STM32L0xx_Nucleo_32
+STM32_TouchSensing_Library
+STM32_USB_Device_Library
+CMSIS
+Adafruit_Shield
