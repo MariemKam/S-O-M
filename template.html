@@ -1,0 +1,45 @@
+<html>
+
+<head>
+  <title>{{report_name}}</title>
+</head>
+
+<body
+  style="background-image:url('http://dita.st.com/dx/ditaexchange/Repository/Pictures/logo_cube.png');background-repeat:no-repeat;background-position: right bottom;background-size:50% 50%">
+  <h1><img
+      src="http://www.st.com/content/ccc/fragment/multimedia/image/icon/57/93/c2/f0/cb/05/48/f0/STM32CUBELogo.png/files/STM32CUBELogo.png/_jcr_content/translations/en.STM32CUBELogo.png"
+      alt="logo" />{{report_name}}</h1>
+  <p>&nbsp;</p>
+  <table style="background-color:rgba(0, 0, 0, 0)">
+    <tr>
+      <th align=LEFT><span style="font-size: 16px;">generated at : {{gen_date}} </span></th>
+  </table>
+  <p>&nbsp;</p>
+  <table border="1" style="background-color:rgba(0, 0, 0, 0); border-spacing: 0" align=center>
+    <tr>
+      {% for ColName in header %}
+      <th align=center> {{ColName}} </th>
+      {% endfor %}
+    </tr>
+    {% for row in rows %}
+    <tr>
+	
+      {% for content in row %}
+      {% if content == "OK" %}
+      <td align=center style="background-color: green">{{content}}</td>
+      {% elif content == "WARNING" %}
+      <td align=center style="background-color: yellow">{{content}}</td>
+      {% elif content == "ERROR" %}
+      <td align=center style="background-color: red">{{content}}</td>
+      {% elif content == "NA" %}
+      <td align=center style="background-color: lightgray">{{content}}</td>
+      {% else %}
+      <td align=center>{{content}}</td>
+      {% endif %}
+      {% endfor %}
+    </tr>
+    {% endfor %}
+  </table>
+</body>
+
+</html>
